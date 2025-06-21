@@ -138,32 +138,109 @@
   gap: 2rem;
 }
 
-/* Responsive */
+/* Mobile Responsive */
 @media (max-width: 768px) {
   .section {
     padding: 4rem 0;
+    min-height: auto;
   }
   
   .section-title {
     font-size: 2.5rem;
+    margin-bottom: 2rem;
+  }
+  
+  .section-subtitle {
+    font-size: 1rem;
+    margin-bottom: 2rem;
   }
   
   .heading-1 {
     font-size: 2.5rem;
+  }
+  
+  .heading-2 {
+    font-size: 2rem;
+  }
+  
+  .heading-3 {
+    font-size: 1.3rem;
+  }
+  
+  .body-large {
+    font-size: 1.1rem;
   }
   
   .card {
     padding: 1.5rem;
+    margin-bottom: 1.5rem;
+  }
+  
+  .grid-2 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .grid-3 {
+    grid-template-columns: 1fr;
+    gap: 1.5rem;
+  }
+  
+  .btn {
+    padding: 0.8rem 1.5rem;
+    font-size: 0.9rem;
   }
 }
 
 @media (max-width: 480px) {
+  .section {
+    padding: 3rem 0;
+  }
+  
   .section-title {
     font-size: 2rem;
+    margin-bottom: 1.5rem;
   }
   
   .heading-1 {
     font-size: 2rem;
+  }
+  
+  .card {
+    padding: 1rem;
+  }
+  
+  .container {
+    padding: 0 1rem;
+  }
+}
+
+/* Smooth scrolling fix for mobile */
+html {
+  scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
+}
+
+body {
+  overflow-x: hidden;
+}
+
+/* Prevent horizontal scroll on mobile */
+* {
+  max-width: 100%;
+  box-sizing: border-box;
+}
+
+/* Fix for mobile viewport */
+@media (max-width: 768px) {
+  .section {
+    padding: 2rem 0;
+    min-height: auto;
+  }
+  
+  /* Ensure content is visible on mobile */
+  .section-content {
+    padding: 1rem 0;
   }
 }
 
@@ -185,4 +262,18 @@
 
 .stagger-children > * {
   animation-delay: calc(var(--index) * 0.1s);
+}
+
+/* Mobile menu improvements */
+@media (max-width: 768px) {
+  /* Prevent body scroll when mobile menu is open */
+  body.menu-open {
+    overflow: hidden;
+  }
+  
+  /* Improve touch targets */
+  button, a {
+    min-height: 44px;
+    min-width: 44px;
+  }
 }

@@ -26,10 +26,12 @@
 body {
   margin: 0;
   min-height: 100vh;
+  overflow-x: hidden;
 }
 
 html {
   scroll-behavior: smooth;
+  -webkit-overflow-scrolling: touch;
 }
 
 .container {
@@ -41,6 +43,12 @@ html {
 @media (max-width: 768px) {
   .container {
     padding: 0 1rem;
+  }
+}
+
+@media (max-width: 480px) {
+  .container {
+    padding: 0 0.75rem;
   }
 }
 
@@ -60,4 +68,43 @@ html {
 
 ::-webkit-scrollbar-thumb:hover {
   background: var(--color-primary);
+}
+
+/* Mobile optimizations */
+@media (max-width: 768px) {
+  /* Improve touch scrolling */
+  * {
+    -webkit-overflow-scrolling: touch;
+  }
+  
+  /* Prevent zoom on input focus */
+  input, textarea, select {
+    font-size: 16px;
+  }
+  
+  /* Improve button touch targets */
+  button, a {
+    min-height: 44px;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+  }
+}
+
+/* Fix for mobile viewport units */
+@supports (-webkit-touch-callout: none) {
+  .section {
+    min-height: -webkit-fill-available;
+  }
+}
+
+/* Prevent horizontal overflow */
+body, html {
+  overflow-x: hidden;
+  width: 100%;
+}
+
+#root {
+  overflow-x: hidden;
+  width: 100%;
 }

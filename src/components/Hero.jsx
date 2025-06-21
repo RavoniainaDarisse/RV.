@@ -11,7 +11,22 @@ const Hero = () => {
   const scrollToContact = () => {
     const element = document.getElementById('contact');
     if (element) {
-      element.scrollIntoView({ behavior: 'smooth' });
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({ 
+        top: offsetTop, 
+        behavior: 'smooth' 
+      });
+    }
+  };
+
+  const scrollToProjects = () => {
+    const element = document.getElementById('projects');
+    if (element) {
+      const offsetTop = element.offsetTop - 80;
+      window.scrollTo({ 
+        top: offsetTop, 
+        behavior: 'smooth' 
+      });
     }
   };
 
@@ -124,14 +139,14 @@ const Hero = () => {
                 Me contacter
               </motion.button>
               
-              <motion.a
+              <motion.button
                 whileHover={{ scale: 1.05 }}
                 whileTap={{ scale: 0.95 }}
-                href="#projects"
+                onClick={scrollToProjects}
                 className="btn btn-outline"
               >
                 Voir mes projets
-              </motion.a>
+              </motion.button>
             </motion.div>
           </motion.div>
         </div>
