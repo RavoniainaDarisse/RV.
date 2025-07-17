@@ -56,16 +56,23 @@ const Hero = () => {
                 margin: '0 auto 2rem auto',
                 display: 'flex',
                 alignItems: 'center',
-                justifyContent: 'center'
+                justifyContent: 'center',
+                backgroundImage: 'url("/assets/img/profile2.png")',
+                backgroundPosition: 'center',
+                backgroundSize: 'cover'
               }}
             >
-              <span style={{
+              {/* <span style={{
                 color: '#fff',
                 fontSize: '2.5rem',
                 fontWeight: '700'
               }}>
                 RN
-              </span>
+              </span> */}
+              {/* <div className=''>
+                
+              </div>
+              <img src="/assets/img/profile2.png" alt="" /> */}
             </motion.div>
 
             <motion.h1
